@@ -1,0 +1,17 @@
+.results-section {
+  background-color: #f7f7f7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .results-pre {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    font-family: "Courier New", monospace;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+}
