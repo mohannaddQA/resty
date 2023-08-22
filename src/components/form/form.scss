@@ -50,3 +50,12 @@ form {
     }
   }
 }
+textarea {
+  width: 25%;
+  height: 100px;
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
