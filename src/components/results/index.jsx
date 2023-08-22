@@ -1,12 +1,16 @@
 import React from "react";
 import "./results.scss";
 
-function Results({ data }) {
+function Results({ data, loading }) {
   return (
     <section className="results-section">
-      <pre className="results-pre">
-        {data ? JSON.stringify(data, undefined, 2) : null}
-      </pre>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <pre className="results-pre">
+          {data ? JSON.stringify(data, undefined, 2) : null}
+        </pre>
+      )}
     </section>
   );
 }

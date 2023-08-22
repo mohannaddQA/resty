@@ -8,10 +8,10 @@
 
 2. **Form:**
 
-   - Allows users to input the API URL and choose an HTTP method (GET, POST, PUT, DELETE).
-   - When the user submits the form:
-     - A mock API response is generated with sample data.
-     - The response and selected request parameters are stored in the App component's state.
+- Allows users to input the API URL and choose an HTTP method (GET, POST, PUT, DELETE).
+- When the user submits the form:
+  - Sends an API request to the specified URL with the chosen HTTP method using Axios.
+  - Displays the response and selected request parameters in the Results component.
 
 3. **Results:**
 
@@ -73,4 +73,11 @@
    - After clicking "GO!", the Results section on the page will display the mock API response data in a structured JSON format.
 
 **Example**
+
+## lab26
+
 ![screen](./screenhsot.png)
+
+## lab27
+
+![screen](./screen.png)
