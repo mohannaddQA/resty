@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -7,13 +7,26 @@ import Results from "./components/results";
 import axios from "axios";
 
 function App() {
-  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [requestParams, setRequestParams] = useState({
     method: "GET",
     url: "",
     body: "",
   });
+  const [response, setResponse] = useState("");
+  const [formattedHeaders, setFormattedHeaders] = useState("");
+  const [formattedData, setFormattedData] = useState("");
+
+  useEffect(() => {
+    if (response) {
+      console.log(response);
+      const formattedHeaders = JSON.stringify(response.headers, null, 2);
+      const formattedData = JSON.stringify(response.data, null, 2);
+
+      setFormattedHeaders(formattedHeaders);
+      setFormattedData(formattedData);
+    }
+  }, [response]);
 
   async function callApi(requestParams) {
     setLoading(true);
@@ -24,15 +37,8 @@ function App() {
         data: requestParams.body,
       };
 
-      const response = await axios(requestOptions);
-
-      const responseData = {
-        url: requestParams.url,
-        method: requestParams.method,
-        response: response.data,
-      };
-
-      setData(responseData);
+      const apiResponse = await axios(requestOptions);
+      setResponse(apiResponse);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
@@ -50,7 +56,11 @@ function App() {
       </div>
 
       <Form handleApiCall={callApi} />
-      <Results data={data} loading={loading} />
+      <Results
+        loading={loading}
+        formattedHeaders={formattedHeaders}
+        formattedData={formattedData}
+      />
       <Footer />
     </React.Fragment>
   );
