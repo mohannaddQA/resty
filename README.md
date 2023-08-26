@@ -1,5 +1,13 @@
 # RESTy
 
+## live URL
+
+## phase 3 changes :
+
+1- refactore the code so that the use effect takes care of changing the formatted response once a response arrives
+2- made sure that all rest methodes work correctly
+3- deployed the app
+
 ## Components and How They Work
 
 1. **Header:**
@@ -81,3 +89,7 @@
 ## lab27
 
 ![screen](./screen.png)
+
+## lab28
+
+![screen](./v3.png)
