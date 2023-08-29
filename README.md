@@ -1,6 +1,13 @@
 # RESTy
 
-## live URL
+## live URL : [the live version ](https://res-6544.onrender.com/)
+
+## phase 4 changes :
+
+1- refactore the code so that the useReduser takes care of all the states
+2- made sure that all rest methodes work correctly
+3- added a history section
+3- deployed the app
 
 ## phase 3 changes :
 
